@@ -1,4 +1,5 @@
 :root {
+    /* Colors */
     --background-accent: #009688;
     --background-main: #dadbd4;
     --beige-background: #eaeaea;
@@ -9,6 +10,14 @@
     --header-icons: #b1b1b1;
     --text-grey: #a7a7a7;
     --sent-messages: #d5f9ba;
+    
+    /* Sizes */
+    --app-left-column: 40%;
+    --app-right-columns: calc(100% - var(--app-left-column));
+    --app-header-heigth: 80px;
+    --notification-alert-height: 100px;
+    --searchbar-height: 50px;
+    --new-message-height: 80px;
 }
 
 /* RESET */
@@ -39,20 +48,20 @@ i {
 #container {
     width: 100%;
     height: 100vh;
-    background: var(--background-main);
-    background: linear-gradient(0deg, var(--background-main) 85%, var(--background-accent) 85%);
     display: flex;
     justify-content: center;
     align-items: center;
+    background: var(--background-main);
+    background: linear-gradient(0deg, var(--background-main) 85%, var(--background-accent) 85%);
 }
 
 #app-container {
-    width: 80%;
     min-width: 950px;
+    width: 80%;
     max-width: 1500px;
     height: 95%;
-    background-color: white;
     display: flex;
+    background-color: white;
 }
 
 /* INTERNAL STRUCTURE */
@@ -60,14 +69,14 @@ i {
 #my-profile,
 #selected-contact {
     width: 100%;
-    height: 80px;
+    height: var(--app-header-heigth);
     background-color: var(--beige-background);
 }
 
 .circle-avatar {
-    display: inline-block;
     width: 60px;
     height: 60px;
+    display: inline-block;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -90,7 +99,7 @@ i {
 
 /* left side components */
 #left-container {
-    width: 40%;
+    width: var(--app-left-column);
     height: 100%;
 }
 
@@ -113,22 +122,22 @@ i {
 
 #notifications-alert {
     width: 100%;
-    height: 100px;
-    background-color: var(--notification-alert);
+    height: var(--notification-alert-height);
     display: flex;
     align-items: center;
+    background-color: var(--notification-alert);
 }
 
 #notification-bell {
     width: 60px;
     height: 60px;
+    border-radius: 50%;
+    margin-left: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     line-height: 60px;
-    font-size: 1.5rem;
-    background-color: white;
-    border-radius: 50%;
     color: var(--notification-alert);
-    margin-left: 2rem;
+    background-color: white;
 }
 
 #notification-text span {
@@ -141,20 +150,20 @@ i {
 
 #search-contacts {
     width: 100%;
-    height: 50px;
+    height: var(--searchbar-height);
     padding: 10px;
-    background-color: var(--light-gray);
     display: flex;
     align-items: center;
+    background-color: var(--light-gray);
 }
 
 #search-contacts div {
     width: 15%;
     height: 100%;
-    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 
 #search-contacts input {
@@ -167,7 +176,7 @@ i {
 /* left side components: contacts's list */
 #contacts-list {
     width: 100%;
-    height: calc(100% - 80px - 100px - 50px);
+    height: calc(100% - var(--app-header-heigth) - var(--notification-alert-height) - var(--searchbar-height));
     overflow: auto;
 }
 
@@ -192,9 +201,9 @@ i {
 }
 
 .contact-avatar {
-    display: inline-block;
     width: 70px;
     height: 70px;
+    display: inline-block;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -205,7 +214,7 @@ i {
 
 /* right side components */
 #right-container {
-    width: 60%;
+    width: var(--app-right-columns);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -220,8 +229,8 @@ i {
 
 #header-avatar {
     display: flex;
-    margin: 0 1rem;
     align-items: center;
+    margin: 0 1rem;
 }
 
 #header-avatar-name {
@@ -232,7 +241,7 @@ i {
 
 #chat-container {
     width: 100%;
-    height: calc(100% - 160px);
+    height: calc(100% - var(--app-header-heigth) - var(--new-message-height));
     background-image: url(../img/mine.jpg);
     padding: 3rem 5rem;
     overflow: auto;
@@ -268,7 +277,7 @@ i {
 
 #new-message-container {
     width: 100%;
-    height: 80px;
+    height: var(--new-message-height);
     position: relative;
     left: 0;
     bottom: 0px;
