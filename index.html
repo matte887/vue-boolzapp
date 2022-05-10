@@ -106,17 +106,9 @@
                     <!-- Chat container -->
                     <div id="chat-container">
                         <ul>
-                            <li class="sent">
-                                <div class="chat-text">Hai portato a spasso il cane?</div>
-                                <div class="chat-time text-grey">12:00</div>
-                            </li>
-                            <li class="sent">
-                                <div class="chat-text">Ricordati di stendere i panni</div>
-                                <div class="chat-time text-grey">12:00</div>
-                            </li>
-                            <li class="received">
-                                <div class="chat-text">Tutto fatto!</div>
-                                <div class="chat-time text-grey">12:00</div>
+                            <li :class="messages.status" v-for="messages in contacts[0].messages">
+                                <div class="chat-text">{{messages.message}}</div>
+                                <div class="chat-time text-grey">{{messages.date}}</div>
                             </li>
                         </ul>
                     </div>
