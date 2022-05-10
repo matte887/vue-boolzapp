@@ -6,6 +6,7 @@
     --notification-alert: #8edafc;
     --new-message: #f3eeea;
     --new-message-icons: #6b7376;
+    --header-icons: #b1b1b1;
 }
 
 /* RESET */
@@ -14,6 +15,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* img {
+    width: 100%;
+    height: auto;
+} */
 
 /* MAIN STRUCTURE */
 #container {
@@ -51,12 +57,55 @@
     justify-content: space-between;
 }
 
-/* LEFT SIDE COMPONENTS */
+/* INTERNAL STRUCTURE */
+/* common */
 #my-profile,
 #selected-contact {
     width: 100%;
     height: 80px;
     background-color: var(--contacts-background);
+}
+
+.header-avatar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.header-avatar span {
+    margin: 0 1rem;
+}
+
+.circle-avatar {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* vertical-align: middle; */
+}
+
+.circle-avatar img {
+    width: 100%;
+    height: auto;
+}
+
+.header-icons {
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    color: var(--header-icons);
+}
+
+.header-icons i {
+    margin: 0 .5rem;
+}
+
+/* left side components */
+#my-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #notifications-alert {
@@ -79,7 +128,13 @@
     padding: 5px;
 }
 
-/* RIGHT SIDE COMPONENTS */
+/* right side components */
+#selected-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #new-message-container {
     width: 100%;
     height: 80px;
