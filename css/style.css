@@ -22,6 +22,10 @@
     color: var(--header-icons);
 }
 
+body {
+    font-family: 'Lato', sans-serif;
+}
+
 /* MAIN STRUCTURE */
 #container {
     width: 100%;
