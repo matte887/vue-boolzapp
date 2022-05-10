@@ -165,5 +165,11 @@ const app = new Vue({
             }
         ]
         
+    },
+    methods: {
+        sendMessage: function() {
+            // debug
+            alert("Invio messaggio...");
+        }
     }
 });
