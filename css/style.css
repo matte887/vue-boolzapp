@@ -7,6 +7,7 @@
     --new-message: #f3eeea;
     --new-message-icons: #6b7376;
     --header-icons: #b1b1b1;
+    --selected-contact: #e9ebeb;
 }
 
 /* RESET */
@@ -16,10 +17,10 @@
     box-sizing: border-box;
 }
 
-/* img {
-    width: 100%;
-    height: auto;
-} */
+/* COMMON */
+.text-grey {
+    color: var(--header-icons);
+}
 
 /* MAIN STRUCTURE */
 #container {
@@ -41,11 +42,9 @@
     display: flex;
 }
 
-#contacts-list {
+#left-container {
     width: 40%;
     height: 100%;
-    /* debug */
-    background-color: lightblue;
 }
 
 #chat-container {
@@ -66,27 +65,16 @@
     background-color: var(--contacts-background);
 }
 
-.header-avatar {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    margin: 0 1rem;
-}
-
-.header-avatar span {
-    margin: 0 1rem;
-}
-
 .circle-avatar {
     display: inline-block;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     overflow: hidden;
-    /* vertical-align: middle; */
 }
 
-.circle-avatar img {
+.circle-avatar img,
+.contact-avatar img {
     width: 100%;
     height: auto;
 }
@@ -102,6 +90,17 @@
 }
 
 /* left side components */
+#my-avatar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+#my-avatar span {
+    margin: 0 1rem;
+}
+
 #my-profile {
     display: flex;
     justify-content: space-between;
@@ -112,6 +111,28 @@
     width: 100%;
     height: 100px;
     background-color: var(--notification-alert);
+    display: flex;
+    align-items: center;
+}
+
+#notification-bell {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 50%;
+    color: var(--notification-alert);
+    margin-left: 2rem;
+}
+
+#notification-text span {
+    margin: .5rem;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 #search-contacts {
@@ -128,11 +149,57 @@
     padding: 5px;
 }
 
+/* left side components: contacts's list */
+#contacts-list {
+    width: 100%;
+    height: calc(100% - 80px - 100px - 50px);
+    overflow: auto;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--new-message);
+}
+
+.contact-avatar-info {
+    display: flex;
+    margin: 1rem;
+}
+
+.time-received {
+    margin: 1rem;
+}
+
+.contact-avatar {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.selected-contact {
+    background-color: var(--selected-contact);
+}
+
 /* right side components */
 #selected-contact {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#header-avatar {
+    display: flex;
+    margin: 0 1rem;
+    align-items: center;
+}
+
+#header-avatar-name {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
 }
 
 #new-message-container {

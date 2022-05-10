@@ -18,11 +18,13 @@
     <div id="root">
         <div id="container">
             <div id="app-container">
-                <div id="contacts-list">
+                <!-- Left side container -->
+                <div id="left-container">
+                    <!-- My profile -->
                     <div id="my-profile">
-                        <div class="header-avatar">
+                        <div id="my-avatar">
                             <div class="circle-avatar">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img src="img/avatar_io.jpg" alt="">
                             </div>
                             <span id="my-name">Sofia</span>
                         </div>
@@ -32,19 +34,56 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
-                    <div id="notifications-alert"></div>
+                    <!-- /My profile -->
+
+                    <!-- Turn off notification -->
+                    <div id="notifications-alert">
+                        <div id="notification-bell">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div id="notification-text">
+                            <span>Ricevi notifiche di nuovi messaggi</span><br>
+                            <span class="text-grey underline">Attiva notifiche desktop</span>
+                        </div>
+                    </div>
+                    <!-- /Turn off notification -->
+
+                    <!-- Search contacts -->
                     <div id="search-contacts">
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
+                    <!-- /Search contacts -->
+
+                    <!-- List of contacts -->
+                    <div id="contacts-list">
+                        <div class="contact" v-for="contact in contacts">
+                            <div class="contact-avatar-info">
+                                <div class="contact-avatar">
+                                    <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+                                </div>
+                                <div id="header-avatar-name">
+                                    <span class="contact-name">{{contact.name}}</span>
+                                    <span class="last-access text-grey">Ultimo messaggio inviato</span>
+                                </div>
+                            </div>
+                            <div class="time-received text-grey">12:00</div>
+                        </div>
+                    </div>
+                    <!-- /List of contacts -->
                 </div>
+                <!-- /Left side container -->
+
+                <!-- Right side container -->
                 <div id="chat-container">
                     <div id="selected-contact">
-                        <div class="header-avatar">
+                        <div id="header-avatar">
                             <div class="circle-avatar">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="'img/avatar' + contacts[0].avatar + '.jpg'" alt="">
                             </div>
-                            <span class="contact-name">Michele</span>
-                            <span class="last-access">Ultimo accesso oggi alle 12:00</span>
+                            <div id="header-avatar-name">
+                                <span class="contact-name">{{contacts[0].name}}</span>
+                                <span class="last-access text-grey">Ultimo accesso oggi alle 12:00</span>
+                            </div>
                         </div>
                         <div class="header-icons">
                             <i class="fas fa-search"></i>
@@ -58,6 +97,7 @@
                         <span><i class="fas fa-microphone"></i></span>
                     </div>
                 </div>
+                <!-- /Right side container -->
             </div>
         </div>
     </div>
