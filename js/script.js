@@ -193,8 +193,8 @@ const app = new Vue({
         },
         searchContact: function() {
             this.contacts.forEach(contact => {
-                const formattedName = contact.name.toLowerCase();
-                const formattedSearch = this.newResearch.toLowerCase();
+                const formattedName = contact.name.toLowerCase().trim();
+                const formattedSearch = this.newResearch.toLowerCase().trim();
                 if (formattedName.includes(formattedSearch)) {
                     contact.visible = true;
                 } else {
