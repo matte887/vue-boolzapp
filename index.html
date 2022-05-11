@@ -59,7 +59,11 @@
                         <div class="text-grey">
                             <i class="fas fa-search"></i>
                         </div>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input
+                        type="text"
+                        placeholder="Cerca o inizia una nuova chat"
+                        v-model="newResearch"
+                        @keyup="searchContact">
                     </div>
                     <!-- /Search contacts -->
 
@@ -67,6 +71,7 @@
                     <div id="contacts-list">
                         <div
                         v-for="(contact, index) in contacts"
+                        v-if="contact.visible"
                         class="contact"
                         :class="{'active-contact' : activeContact === index}"
                         @click="selectContact(index)">

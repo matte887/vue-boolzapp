@@ -170,8 +170,9 @@ const app = new Vue({
             date: '10/01/2020 16:15:22',
             message: 'Ok!',
             status: 'received'
-        }
-        
+        },
+        newResearch: '',
+        hideContact: ''    
     },
     methods: {
         selectContact: function(index) {
@@ -189,6 +190,17 @@ const app = new Vue({
             const timerReply = setTimeout(() => {
                 this.contacts[index].messages.push(this.newReply);
             }, 1000);
+        },
+        searchContact: function() {
+            this.contacts.forEach(contact => {
+                const formattedName = contact.name.toLowerCase();
+                const formattedSearch = this.newResearch.toLowerCase();
+                if (formattedName.includes(formattedSearch)) {
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            });
         }
     }
 });

@@ -214,6 +214,10 @@ i {
     background-color: var(--selected-contact);
 }
 
+.hide-contact {
+    display: none;
+}
+
 /* right side components */
 #right-container {
     width: var(--app-right-columns);
