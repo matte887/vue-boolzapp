@@ -82,10 +82,10 @@
                                 <div id="header-avatar-name">
                                     <span class="contact-name">{{contact.name}}</span>
                                     <span
-                                    class="last-access text-grey">{{contact.messages[contact.messages.length - 1].message}}</span>
+                                    class="last-message text-grey">{{contact.messages[contact.messages.length - 1].message}}</span>
                                 </div>
                             </div>
-                            <div class="time-received text-grey">12:00</div>
+                            <div class="time-received text-grey">{{contact.messages[contact.messages.length - 1].date}}</div>
                         </div>
                     </div>
                     <!-- /List of contacts -->

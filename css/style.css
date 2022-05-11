@@ -199,7 +199,12 @@ i {
 }
 
 .time-received {
+    font-size: .8rem;
     margin: 1rem;
+}
+
+.last-message {
+    font-size: .9rem;
 }
 
 .contact-avatar {
