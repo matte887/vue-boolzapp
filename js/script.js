@@ -205,11 +205,11 @@ const app = new Vue({
         },
         showOptions: function(index) {
             this.thisMessage = index;
-            console.log(this.thisMessage);
         },
-        deleteMessage: function(messages, index) {
-            this.contacts[this.activeContact].messages.splice(index, index);
-            this.hideOption = '';
+        deleteMessage: function(index) {
+            // event bubbling
+            this.contacts[this.activeContact].messages.splice(index, 1);
+            this.thisMessage = -1;
         }
     }
 });

@@ -125,7 +125,7 @@
                                 class="message-options"
                                 :class="index === thisMessage ? 'show-options' : 'hide-option'">
                                     <p>Message info</p>
-                                    <p @click="deleteMessage(messages, index)">Delete message</p>
+                                    <p @click.stop="deleteMessage(index)">Delete message</p>
                                 </div>
                                 <div class="chat-time text-grey">{{messages.date}}</div>
                             </li>
