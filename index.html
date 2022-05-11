@@ -24,7 +24,7 @@
     <div id="root">
         <div id="container">
             <div id="app-container">
-                <!-- Left side container -->
+                <!-- LEFT SIDE CONTAINER -->
                 <div id="left-container">
                     <!-- My profile -->
                     <div id="my-profile">
@@ -83,18 +83,18 @@
                     </div>
                     <!-- /List of contacts -->
                 </div>
-                <!-- /Left side container -->
+                <!-- /LEFT SIDE CONTAINER -->
 
-                <!-- Right side container -->
+                <!-- RIGHT SIDE CONTAINER -->
                 <div id="right-container">
                     <!-- Selected contact -->
                     <div id="selected-contact">
                         <div id="header-avatar">
                             <div class="circle-avatar">
-                                <img :src="'img/avatar' + contacts[0].avatar + '.jpg'" alt="">
+                                <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="">
                             </div>
                             <div id="header-avatar-name">
-                                <span class="contact-name">{{contacts[0].name}}</span>
+                                <span class="contact-name">{{contacts[activeContact].name}}</span>
                                 <span class="last-access text-grey">Ultimo accesso oggi alle 12:00</span>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                     <!-- Chat container -->
                     <div id="chat-container">
                         <ul>
-                            <li :class="messages.status" v-for="messages in contacts[0].messages">
+                            <li :class="messages.status" v-for="messages in contacts[activeContact].messages">
                                 <div class="chat-text">{{messages.message}}</div>
                                 <div class="chat-time text-grey">{{messages.date}}</div>
                             </li>
@@ -125,7 +125,7 @@
                     </div>
                     <!-- /Write new message -->
                 </div>
-                <!-- /Right side container -->
+                <!-- /RIGHT SIDE CONTAINER -->
             </div>
         </div>
     </div>
