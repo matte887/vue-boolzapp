@@ -265,6 +265,7 @@ i {
     border-radius: 10px;
     padding: .5rem;
     position: relative;
+    cursor: pointer;
 }
 
 #chat-container ul.chat-messages {
@@ -288,15 +289,21 @@ i {
 }
 
 .message-options {
-    background-color: lightgray;
+    background-color: white;
+    box-shadow: 6px 6px 18px 4px #565656;
     position: absolute;
-    bottom: -60px;
+    bottom: -95px;
     left: 95px;
     z-index: 1;
 }
 
 .message-options p {
-    margin: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.message-options p:hover {
+    background-color: var(--selected-contact);
 }
 
 .hide-option {
