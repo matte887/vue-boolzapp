@@ -121,7 +121,11 @@
                     <!-- Write new message -->
                     <div id="new-message-container">
                         <span><i class="far fa-smile"></i></span>
-                        <input type="text" name="" id="" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage">
+                        <input
+                        type="text"
+                        placeholder="Scrivi un messaggio"
+                        @keyup.enter="sendMessage(activeContact)"
+                        v-model="message">
                         <span><i class="fas fa-microphone"></i></span>
                     </div>
                     <!-- /Write new message -->

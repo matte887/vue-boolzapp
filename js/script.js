@@ -164,16 +164,22 @@ const app = new Vue({
                 ],
             }
         ],
-        activeContact: 0
+        activeContact: 0,
+        message: '',
         
     },
     methods: {
         selectContact: function(index) {
             this.activeContact = index;
         },
-        sendMessage: function() {
-            // debug
-            alert("Invio messaggio...");
+        sendMessage: function(index) {
+            const newMessage = {
+                date: '10/01/2020 15:30:55',
+                message: this.message,
+                status: 'sent'
+            };
+            this.contacts[index].messages.push(newMessage);
+            this.message= '';
         }
     }
 });
