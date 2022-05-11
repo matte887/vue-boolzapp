@@ -158,7 +158,7 @@ i {
 }
 
 #search-contacts div {
-    width: 15%;
+    width: 10%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -167,10 +167,11 @@ i {
 }
 
 #search-contacts input {
-    width: 85%;
+    width: 90%;
     height: 100%;
     border: none;
     padding: 5px;
+    outline: none;
 }
 
 /* left side components: contacts's list */
@@ -183,7 +184,7 @@ i {
 .contact {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid var(--beige-background);
+    border-bottom: 1px solid var(--beige-background);
 }
 
 .contact-avatar-info {
@@ -208,7 +209,7 @@ i {
     overflow: hidden;
 }
 
-.selected-contact {
+.active-contact {
     background-color: var(--selected-contact);
 }
 

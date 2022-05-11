@@ -65,10 +65,13 @@
 
                     <!-- List of contacts -->
                     <div id="contacts-list">
-                        <div class="contact" v-for="contact in contacts">
+                        <div
+                        v-for="(contact, index) in contacts"
+                        class="contact"
+                        :class="{'active-contact' : activeContact === index}">
                             <div class="contact-avatar-info">
                                 <div class="contact-avatar">
-                                    <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+                                    <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                                 </div>
                                 <div id="header-avatar-name">
                                     <span class="contact-name">{{contact.name}}</span>
