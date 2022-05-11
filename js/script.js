@@ -173,7 +173,6 @@ const app = new Vue({
         },
         newResearch: '',
         hideContact: '',
-        hideOption: 'hide-option',
         thisMessage: ''
     },
     methods: {
@@ -210,6 +209,7 @@ const app = new Vue({
         },
         deleteMessage: function(messages, index) {
             this.contacts[this.activeContact].messages.splice(index, index);
+            this.hideOption = '';
         }
     }
 });
