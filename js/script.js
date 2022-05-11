@@ -168,6 +168,9 @@ const app = new Vue({
         
     },
     methods: {
+        selectContact: function(index) {
+            this.activeContact = index;
+        },
         sendMessage: function() {
             // debug
             alert("Invio messaggio...");

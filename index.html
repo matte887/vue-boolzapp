@@ -68,7 +68,8 @@
                         <div
                         v-for="(contact, index) in contacts"
                         class="contact"
-                        :class="{'active-contact' : activeContact === index}">
+                        :class="{'active-contact' : activeContact === index}"
+                        @click="selectContact(index)">
                             <div class="contact-avatar-info">
                                 <div class="contact-avatar">
                                     <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
