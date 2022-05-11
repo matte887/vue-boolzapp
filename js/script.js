@@ -166,6 +166,11 @@ const app = new Vue({
         ],
         activeContact: 0,
         message: '',
+        newReply: {
+            date: '10/01/2020 16:15:22',
+            message: 'Ok!',
+            status: 'received'
+        }
         
     },
     methods: {
@@ -180,6 +185,10 @@ const app = new Vue({
             };
             this.contacts[index].messages.push(newMessage);
             this.message= '';
+
+            const timerReply = setTimeout(() => {
+                this.contacts[index].messages.push(this.newReply);
+            }, 1000);
         }
     }
 });
