@@ -115,9 +115,18 @@
 
                     <!-- Chat container -->
                     <div id="chat-container">
-                        <ul>
-                            <li :class="messages.status" v-for="messages in contacts[activeContact].messages">
+                        <ul class="chat-messages">
+                            <li
+                            :class="messages.status"
+                            v-for="(messages, index) in contacts[activeContact].messages"
+                            @click="showOptions(index)">
                                 <div class="chat-text">{{messages.message}}</div>
+                                <div
+                                class="message-options"
+                                :class="index === thisMessage ? 'show-options' : 'hide-option'">
+                                    <p>Message info</p>
+                                    <p @click="deleteMessage(messages, index)">Delete message</p>
+                                </div>
                                 <div class="chat-time text-grey">{{messages.date}}</div>
                             </li>
                         </ul>
