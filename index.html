@@ -127,7 +127,7 @@
                                     <p>Message info</p>
                                     <p @click.stop="deleteMessage(index)">Delete message</p>
                                 </div>
-                                <div class="chat-time text-grey">{{messages.date}}</div>
+                                <div class="chat-time text-grey">{{getTime(messages.date)}}</div>
                             </li>
                         </ul>
                     </div>
@@ -149,6 +149,8 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.25/plugin/customParseFormat.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

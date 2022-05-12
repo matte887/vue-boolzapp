@@ -1,3 +1,5 @@
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+
 const app = new Vue({
     el: '#root',
     data: {
@@ -181,7 +183,7 @@ const app = new Vue({
         },
         sendMessage: function(index) {
             const newMessage = {
-                date: '10/01/2020 15:30:55',
+                date: this.getCurrentTime(),
                 message: this.message,
                 status: 'sent'
             };
@@ -210,6 +212,13 @@ const app = new Vue({
             // event bubbling
             this.contacts[this.activeContact].messages.splice(index, 1);
             this.thisMessage = -1;
+        },
+        getCurrentTime() {
+            return dayjs().format('DD/MM/YYYY HH:mm:ss');
+        },
+        getTime(date) {
+            const dayjsDate = dayjs(date, 'DD/MM/YYYY HH:mm:ss');
+            return dayjsDate.format('HH:mm')
         }
     }
 });

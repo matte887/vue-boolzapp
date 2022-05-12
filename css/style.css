@@ -51,6 +51,7 @@ i {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     background: var(--background-main);
     background: linear-gradient(0deg, var(--background-main) 85%, var(--background-accent) 85%);
 }
