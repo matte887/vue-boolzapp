@@ -22,7 +22,9 @@
 </head>
 <body>
     <div id="root">
-        <div id="container">
+        <div
+        id="container"
+        @click="clickAway">
             <div id="app-container">
                 <!-- LEFT SIDE CONTAINER -->
                 <div id="left-container">
@@ -114,12 +116,13 @@
                     <!-- /Selected contact -->
 
                     <!-- Chat container -->
-                    <div id="chat-container">
+                    <div
+                    id="chat-container">
                         <ul class="chat-messages">
                             <li
                             :class="messages.status"
                             v-for="(messages, index) in contacts[activeContact].messages"
-                            @click="showOptions(index)">
+                            @click.stop="showOptions(index)">
                                 <div class="chat-text">{{messages.message}}</div>
                                 <div 
                                 class="angle-down"

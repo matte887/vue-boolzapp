@@ -222,6 +222,9 @@ const app = new Vue({
         getTime(date) {
             const dayjsDate = dayjs(date, 'DD/MM/YYYY HH:mm:ss');
             return dayjsDate.format('HH:mm')
+        },
+        clickAway() {
+            this.thisMessage = '';
         }
     }
 });
