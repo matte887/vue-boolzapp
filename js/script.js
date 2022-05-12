@@ -1,3 +1,4 @@
+// Stringa per far funzionare dayJS
 dayjs.extend(window.dayjs_plugin_customParseFormat);
 
 const app = new Vue({
@@ -21,7 +22,7 @@ const app = new Vue({
                     },
                     {
                         date: '10/01/2020 16:15:22',
-                        message: 'Tutto fatto!',
+                        message: 'CLICCA COL TASTO DESTRO per il menù a tendina :)',
                         status: 'received'
                     }
                 ],
@@ -186,9 +187,16 @@ const app = new Vue({
             this.contacts[index].messages.push(newMessage);
             this.message= '';
 
-            const timerReply = setTimeout(() => {
+            const timedReply = setTimeout(() => {
                 this.contacts[index].messages.push(this.newReceivedMessage());
             }, 1000);
+        },
+        newReceivedMessage() {
+            return this.newReply = {
+                date: this.getCurrentTime(),
+                message: 'Ok!',
+                status: 'received'
+            }
         },
         searchContact: function() {
             this.contacts.forEach(contact => {
@@ -209,13 +217,8 @@ const app = new Vue({
             this.contacts[this.activeContact].messages.splice(index, 1);
             this.thisMessage = '';
         },
-        newReceivedMessage() {
-            return this.newReply = {
-                date: this.getCurrentTime(),
-                message: 'Ok!',
-                status: 'received'
-            }
-        },
+
+        // funzioni per gestire date/orari con dayJS
         getCurrentTime() {
             return dayjs().format('DD/MM/YYYY HH:mm:ss');
         },
@@ -223,9 +226,13 @@ const app = new Vue({
             const dayjsDate = dayjs(date, 'DD/MM/YYYY HH:mm:ss');
             return dayjsDate.format('HH:mm')
         },
+        
+        // funzione per fare in modo che il menù a tendina scompaia se clicco fuori dal menù stesso
         clickAway() {
             this.thisMessage = '';
         },
+
+        // funzione per gestire il click col tasto destro
         handler: function(e, index) {
             this.showOptions(index);
             e.preventDefault();

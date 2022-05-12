@@ -104,6 +104,7 @@ i {
     height: 100%;
 }
 
+/* left side components: my profile */
 #my-avatar {
     height: 100%;
     display: flex;
@@ -121,6 +122,7 @@ i {
     align-items: center;
 }
 
+/* left side components: turn off notifications */
 #notifications-alert {
     width: 100%;
     height: var(--notification-alert-height);
@@ -149,6 +151,7 @@ i {
     text-decoration: underline;
 }
 
+/* left side components: search contacts */
 #search-contacts {
     width: 100%;
     height: var(--searchbar-height);
@@ -233,6 +236,7 @@ i {
     justify-content: space-between;
 }
 
+/* right side components: selected contact */
 #selected-contact {
     display: flex;
     justify-content: space-between;
@@ -251,6 +255,7 @@ i {
     margin: 0 1rem;
 }
 
+/* right side components: chat container and messages */
 #chat-container {
     width: 100%;
     height: calc(100% - var(--app-header-heigth) - var(--new-message-height));
@@ -266,7 +271,6 @@ i {
     border-radius: 10px;
     padding: .5rem;
     position: relative;
-    cursor: pointer;
 }
 
 #chat-container ul.chat-messages {
@@ -301,12 +305,13 @@ i {
     align-self: flex-start;
 }
 
+/* right side components: menù for deleting messages */
 .message-options {
     background-color: white;
     box-shadow: 6px 6px 18px 4px #565656;
     position: absolute;
     bottom: -95px;
-    left: 95px;
+    right: 10px;
     z-index: 1;
 }
 
@@ -323,6 +328,7 @@ i {
     display: none;
 }
 
+/* right side components: write new message */
 #new-message-container {
     width: 100%;
     height: var(--new-message-height);
