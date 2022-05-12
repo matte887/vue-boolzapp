@@ -122,7 +122,7 @@
                             <li
                             :class="messages.status"
                             v-for="(messages, index) in contacts[activeContact].messages"
-                            @click.stop="showOptions(index)">
+                            @contextmenu="handler($event, index)">
                                 <div class="chat-text">{{messages.message}}</div>
                                 <div 
                                 class="angle-down"

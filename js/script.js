@@ -225,6 +225,10 @@ const app = new Vue({
         },
         clickAway() {
             this.thisMessage = '';
+        },
+        handler: function(e, index) {
+            this.showOptions(index);
+            e.preventDefault();
         }
     }
 });
