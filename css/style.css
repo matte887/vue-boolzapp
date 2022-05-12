@@ -274,9 +274,21 @@ i {
     flex-direction: column;
 }
 
+.chat-text {
+    padding-right: 2rem;
+}
+
 .chat-time {
     text-align: right;
     font-size: .7rem;
+}
+
+.angle-down {
+    position: absolute;
+    right: 15px;
+    top: 2px;
+    font-size: 1.1rem;
+    color: var(--text-grey);
 }
 
 .sent {

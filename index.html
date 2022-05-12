@@ -121,6 +121,11 @@
                             v-for="(messages, index) in contacts[activeContact].messages"
                             @click="showOptions(index)">
                                 <div class="chat-text">{{messages.message}}</div>
+                                <div 
+                                class="angle-down"
+                                :class="{'hide-option' : index !== thisMessage}">
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
                                 <div
                                 class="message-options"
                                 :class="{'hide-option' : index !== thisMessage}">
