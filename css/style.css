@@ -311,10 +311,6 @@ i {
     display: none;
 }
 
-.show-option {
-    display: block;
-}
-
 #new-message-container {
     width: 100%;
     height: var(--new-message-height);

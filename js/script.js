@@ -207,7 +207,7 @@ const app = new Vue({
         deleteMessage: function(index) {
             // event bubbling
             this.contacts[this.activeContact].messages.splice(index, 1);
-            this.thisMessage = -1;
+            this.thisMessage = '';
         },
         newReceivedMessage() {
             return this.newReply = {

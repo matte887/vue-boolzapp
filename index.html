@@ -123,7 +123,7 @@
                                 <div class="chat-text">{{messages.message}}</div>
                                 <div
                                 class="message-options"
-                                :class="index === thisMessage ? 'show-options' : 'hide-option'">
+                                :class="{'hide-option' : index !== thisMessage}">
                                     <p>Message info</p>
                                     <p @click.stop="deleteMessage(index)">Delete message</p>
                                 </div>
