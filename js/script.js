@@ -168,11 +168,7 @@ const app = new Vue({
         ],
         activeContact: 0,
         message: '',
-        newReply: {
-            date: '10/01/2020 16:15:22',
-            message: 'Ok!',
-            status: 'received'
-        },
+        newReply: '',
         newResearch: '',
         hideContact: '',
         thisMessage: ''
@@ -191,7 +187,7 @@ const app = new Vue({
             this.message= '';
 
             const timerReply = setTimeout(() => {
-                this.contacts[index].messages.push(this.newReply);
+                this.contacts[index].messages.push(this.newReceivedMessage());
             }, 1000);
         },
         searchContact: function() {
@@ -212,6 +208,13 @@ const app = new Vue({
             // event bubbling
             this.contacts[this.activeContact].messages.splice(index, 1);
             this.thisMessage = -1;
+        },
+        newReceivedMessage() {
+            return this.newReply = {
+                date: this.getCurrentTime(),
+                message: 'Ok!',
+                status: 'received'
+            }
         },
         getCurrentTime() {
             return dayjs().format('DD/MM/YYYY HH:mm:ss');
